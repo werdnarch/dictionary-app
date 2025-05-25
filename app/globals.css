@@ -1,21 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Your default theme */
+  --background: white;
+  --foreground: black;
+  --input: #f4f5f5;
+  --loader: black;
+  --loaderbar: white;
+  --loadercenter: white;
+  --playButton: #e9d1fa;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+[data-theme="dark"] {
+  --background: black;
+  --foreground: white;
+  --input: #1f1f1f;
+  --loader: white;
+  --loaderbar: black;
+  --loadercenter: black;
+  --playButton: #2d153f;
 }
 
 body {
-  color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  oolor: var(--foreground);
+}
+
+.playButton {
+  background: var(--playButton);
+}
+
+.loader {
+  border-color: var(--loader);
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loaderbar {
+  background: var(--loaderbar);
+}
+.loadercenter {
+  background: var(--loadercenter);
+}
+
+.fontSans {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.fontMono {
+  font-family: "Inconsolata", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+}
+.fontSerif {
+  font-family: "Lora", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.input {
+  background: var(--input);
+}
+
+.list li::marker {
+  color: #a445ed;
+}
+.menu {
+  background: var(--background);
+
+  box-shadow: 0 0px 10px 3px rgb(164, 69, 237, 0.4);
 }
